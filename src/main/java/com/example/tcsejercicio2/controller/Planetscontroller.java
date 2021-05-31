@@ -32,14 +32,13 @@ public class Planetscontroller{
     ){
         Optional<PlanetEntity> optionalPlanet = planetRepository.findById(id);
         if(optionalPlanet.isPresent()) {
-            return ResponseEntity.ok(
+            return ResponseEntity.ok( // Status 200
                     optionalPlanet.get()
             );
         }else{
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT); //Status 204
         }
     }
-
     @PostMapping
     public  ResponseEntity<PlanetEntity> register(
         @RequestBody PlanetRegisterRequest request
@@ -60,7 +59,7 @@ public class Planetscontroller{
             )
         );
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public  ResponseEntity<Void> delete(
         @PathVariable(name = "id") String id
     ){

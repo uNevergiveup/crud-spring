@@ -6,9 +6,10 @@ import com.example.tcsejercicio2.request.PlanetUpdateRequest;
 public class PlanetUpdateRequestMapper {
     public PlanetEntity mapIn(PlanetUpdateRequest request){
         PlanetEntity planet = new PlanetEntity();
-        planet.setId(request.getId());
         planet.setName(request.getName());
         planet.setAge(request.getAge());
+        planet.setMass(request.getMass());
+        planet.setDiameter(request.getDiameter());
         planet.setDiscoveryDate(request.getDiscoveryDate());
         return planet;
     }

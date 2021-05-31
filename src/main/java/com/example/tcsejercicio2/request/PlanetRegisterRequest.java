@@ -1,11 +1,24 @@
 package com.example.tcsejercicio2.request;
+import lombok.ToString;
+
 import java.util.Date;
 
-
+@ToString
 public class PlanetRegisterRequest {
-    private String name;
-    private Integer age;
+    private String id;
+    private  String name;
+    private  int age;
+    private String mass;
+    private String diameter;
     private Date discoveryDate;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -15,12 +28,28 @@ public class PlanetRegisterRequest {
         this.name = name;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getMass() {
+        return mass;
+    }
+
+    public void setMass(String mass) {
+        this.mass = mass;
+    }
+
+    public String getDiameter() {
+        return diameter;
+    }
+
+    public void setDiameter(String diameter) {
+        this.diameter = diameter;
     }
 
     public Date getDiscoveryDate() {
@@ -31,12 +60,4 @@ public class PlanetRegisterRequest {
         this.discoveryDate = discoveryDate;
     }
 
-    @Override
-    public String toString() {
-        return "PlanetRegisterRequest{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", discoveryDate='" + discoveryDate + '\'' +
-                '}';
-    }
 }
